@@ -33,4 +33,11 @@ class FormRequestAgencyEdit extends FormRequest
             'status' => 'required|numeric',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'code.exists' => 'Mã đại lý không tồn tại',
+        ];
+    }
 }
