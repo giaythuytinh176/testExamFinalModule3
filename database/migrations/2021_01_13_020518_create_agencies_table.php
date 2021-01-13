@@ -17,7 +17,7 @@ class CreateAgenciesTable extends Migration
             $table->id();
             $table->integer('code');
             $table->string('name');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('email');
             $table->string('address');
             $table->string('manager');
