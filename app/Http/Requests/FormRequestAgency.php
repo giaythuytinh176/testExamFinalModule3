@@ -33,4 +33,11 @@ class FormRequestAgency extends FormRequest
             'status' => 'required|integer',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'code.unique' => 'Mã đại lý đã tồn tại',
+        ];
+    }
 }
