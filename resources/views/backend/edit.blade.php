@@ -22,6 +22,14 @@
                         @csrf
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <input type="hidden" name="code" value="{{ $agency->code }}">
+                            @if($errors->any())
+                                <tr>
+                                    <th>Code</th>
+                                    <th><p style="color: red"> {{ $errors->first('code') }}</p>
+                                    </th>
+                                </tr>
+                            @endif
+
                             <tr>
                                 <th>Name</th>
                                 <th><input type="text" name="name" value="{{ $agency->name }}">
@@ -71,8 +79,12 @@
                                 <th>Status</th>
                                 <th>
                                     <select name="status">
-                                        <option value="1" {{ ($agency->status == 1) ? "selected" : "" }}>Ngừng hoạt động</option>
-                                        <option value="0" {{ ($agency->status == 0) ? "selected" : "" }}>Đang hoạt động</option>
+                                        <option value="1" {{ ($agency->status == 1) ? "selected" : "" }}>Ngừng hoạt
+                                            động
+                                        </option>
+                                        <option value="0" {{ ($agency->status == 0) ? "selected" : "" }}>Đang hoạt
+                                            động
+                                        </option>
                                     </select>
                                     @if($errors->any())
                                         <p style="color: red"> {{ $errors->first('status') }}</p>
